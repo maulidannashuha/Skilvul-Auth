@@ -10,4 +10,6 @@ router.post('/login',
   body('password').notEmpty(),
   authController.authenticate)
 
+router.get('/logout', authController.logout)
+
 module.exports = router;

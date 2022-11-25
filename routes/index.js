@@ -6,6 +6,8 @@ var router = express.Router();
 router.get('/', (req, res, next) => {
   const session = req.session
 
+  console.log(req.session)
+
   if (!session?.user_id)
     return res.redirect('/auth/login')
 

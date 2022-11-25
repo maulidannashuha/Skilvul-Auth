@@ -9,8 +9,19 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const {db} = require("./config/database");
-
 var app = express();
+
+const session = require('express-session')
+const sess = {
+  secret: 'keyboard cat',
+  cookie: {}
+}
+
+// if (app.get('env') === 'production') {
+//   app.set('trust proxy', 1) // trust first proxy
+//   sess.cookie.secure = true // serve secure cookies
+// }
+app.use(session(sess))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

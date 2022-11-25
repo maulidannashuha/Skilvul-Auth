@@ -21,8 +21,7 @@ const authenticate = async (req, res) => {
   try{
     bcrypt.compare(password, user.password, (err, result) => {
       if (result) {
-        const session = req.session
-        session.user_id = user.id
+        req.session.user_id = user.id
 
         return res.redirect('/')
       }
@@ -34,7 +33,13 @@ const authenticate = async (req, res) => {
   }
 }
 
+const logout = (req, res) => {
+  req.session.destroy()
+  return res.redirect('/auth/login')
+}
+
 module.exports = {
   index,
-  authenticate
+  authenticate,
+  logout
 }
