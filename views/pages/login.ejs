@@ -10,20 +10,25 @@
 </header>
 
 <main>
-    <div class="row">
-        <div class="col-sm-8">
-            <div class="jumbotron">
-                <h1>This is great</h1>
-                <p>Welcome to templating using EJS</p>
-            </div>
-        </div>
+    <div class="container">
+        <h2>Login</h2>
 
-        <div class="col-sm-4">
-            <div class="well">
-                <h3>Look I'm A Sidebar!</h3>
+        <form method="post">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" value="admin@gmail.com" autocomplete="disabled" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
-        </div>
-
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" value="admin" name="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
 </main>
 
